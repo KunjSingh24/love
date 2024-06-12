@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forgiveness</title>
+<style>
+  #question-container {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .button-container {
+    margin-top: 20px;
+  }
+
+  .button-container button {
+    margin: 5px;
+  }
+
+  #no-button {
+    position: absolute;
+    left: 0;
+  }
+
+  #yes-button {
+    position: absolute;
+    right: 0;
+  }
+</style>
+</head>
+<body>
+
+<div id="question-container">
+  <h2>Will You Forgive me my Life?</h2>
+  <div class="button-container">
+    <button id="no-button" onclick="moveNo()">No</button>
+    <button id="yes-button" onclick="showForgiveness()">Yes</button>
+  </div>
+</div>
+
+<script>
+function moveNo() {
+  var noButton = document.getElementById('no-button');
+  var questionContainer = document.getElementById('question-container');
+  var containerWidth = questionContainer.clientWidth - noButton.clientWidth;
+  var containerHeight = questionContainer.clientHeight - noButton.clientHeight;
+  var newX = Math.floor(Math.random() * containerWidth);
+  var newY = Math.floor(Math.random() * containerHeight);
+
+  noButton.style.left = newX + 'px';
+  noButton.style.top = newY + 'px';
+}
+
+function showForgiveness() {
+  var questionContainer = document.getElementById('question-container');
+  questionContainer.innerHTML = '<img src="love.jpeg" alt="Forgiveness GIF">';
+}
+
+</script>
+
+</body>
+</html>
